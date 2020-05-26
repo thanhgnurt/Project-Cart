@@ -6,15 +6,14 @@ import * as actions from './../../Actions/Index'
 
 class Search extends Component {
     constructor(props){
-        super(props);
+        super();
         this.state = {
             keywordSearch : ""
         }
     }
 
-    onSearch = (event) => {
-    
-        // let target = event.target;
+    onChange = (event) => {
+        let target = event.target;
         // let name = target.name;
         // let value = target.value;
         // this.setState ({
@@ -43,6 +42,7 @@ class Search extends Component {
                             type="search"
                             aria-label="Search"
                             name = 'keywordSearch'
+                            onChange = {this.onChange}
                             ref = 'search'
                         
 
@@ -51,7 +51,7 @@ class Search extends Component {
                          type="submit"
                          
                          >
-                            <i className="fa fa-search" onClick = {this.onSearch}> Search</i>
+                            <i className="fa fa-search" > Search</i>
                         </button>
                     </form>
                 </nav>
